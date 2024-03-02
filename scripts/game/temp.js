@@ -34,8 +34,9 @@ function resetTemp() {
     }
 
    
-    for (let x = 0; x < TABS[1].length; x++) tmp.stab.push(0)
     
+    tmp.el = keep[0]
+    tmp.prevSave = keep[1]
    
     tmp.pointGain = FORMS.pointGain()
 }
