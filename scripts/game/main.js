@@ -20,7 +20,11 @@ const ST_NAMES = [
 
 const FORMS = {
    
-   
+   pointGain() {
+    let x = E(1)
+
+    return x
+   },
     rp: {
         gain() {
            
@@ -37,6 +41,11 @@ const FORMS = {
            player.Points=E(0)
            player.rp.points = playrr.rp.points.add(tmp.rp.gain)
         }
+    },
+    gameSpeed() {
+        let gs = E(1)
+        if (player.points.gte(10)) gs = gs.add(player.points.log(10))
+        return gs
     }
   }
 
@@ -209,3 +218,8 @@ function capitalFirst(str) {
 		.map(x => x[0].toUpperCase() + x.slice(1))
 		.join(" ");
 }
+
+
+setInterval(()=>{
+    player.points = player.points.add(tmp.pointGain.mul(tmp.gs))
+})

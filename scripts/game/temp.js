@@ -49,10 +49,13 @@ function updateRagePowerTemp() {
 function updatePointTemp() {
 tmp.pointGain = FORMS.pointGain()
 }
+function updateGamespeedTemp() {
+    tmp.gs = FORMS.gameSpeed() 
+}
 function updateTemp() {
     tmp.offlineActive = player.offline.time > 1
     tmp.offlineMult = tmp.offlineActive?player.offline.time+1:1
-
+    updateGamespeedTemp()
     updatePointTemp()
    updateRagePowerTemp()
    

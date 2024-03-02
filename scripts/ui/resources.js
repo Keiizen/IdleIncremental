@@ -54,7 +54,7 @@ function updateResourcesHTML() {
         tmp.el[i+"_res_div"].setDisplay(unl)
 
         if (unl) {
-            tmp.el[i+"_res_desc"].setHTML(rd.desc(E(1)))
+            tmp.el[i+"_res_desc"].setHTML(rd.desc(tmp.gs))
         }
     }
 }

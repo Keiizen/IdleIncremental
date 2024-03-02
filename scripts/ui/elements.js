@@ -30,7 +30,7 @@ function updateHTML() {
 	let displayMainTab = true
 	
 
-    document.getElementById("game").style = "block" ? (tmp.start && displayMainTab) : "none"
+    tmp.el.game.setDisplay(tmp.start && displayMainTab)
 	
 
 	updateResourcesHTML()
