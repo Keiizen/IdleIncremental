@@ -1,12 +1,11 @@
 const RESOURCES_DIS = {
     points: {
         unl: ()=>true,
-        icon: "",
 
         desc: (gs)=>format(player.points,0)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
     rp: {
-        unl: ()=>true,
+        unl: () {return player.points.gte(1e12)},
         icon: "rp",
         class: "red",
 
@@ -37,10 +36,9 @@ function setupResourcesHTML() {
 
        
     }
-
-    new Element("resources_table").setHTML(h1)
-    let restable = document.getElementById("resources_table")
-    document.getElementById("game").appendChild(restable)
+    let rt = document.createElement("div")
+    rt.innerHTML = h1
+    document.getElementById("game").appendChild(rt)
    
 }
 
