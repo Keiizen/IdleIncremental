@@ -3,9 +3,9 @@ const RESOURCES_DIS = {
         unl: ()=>true,
         icon: "",
 
-        desc: (gs)=>format(player.Points)+"<br>"+formatGain(player.Points, tmp.pointGain.mul(gs), true),
+        desc: (gs)=>format(player.points)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
-    /*rp: {
+    rp: {
         unl: ()=>true,
         icon: "rp",
         class: "red",
@@ -13,7 +13,7 @@ const RESOURCES_DIS = {
         desc: (gs)=>format(player.rp.points,0)+"<br>"+(player.mainUpg.bh.includes(6)||player.mainUpg.atom.includes(6)?formatGain(player.rp.points, tmp.rp.gain.mul(gs)):"(+"+format(tmp.rp.gain,0)+")"),
     
         resetBtn() { FORMS.rp.reset() },
-    },*/
+    },
 
    
 }
@@ -39,6 +39,8 @@ function setupResourcesHTML() {
     }
 
     new Element("resources_table").setHTML(h1)
+    let restable = document.getElementById("resources_table")
+    document.getElementById("game").appendChild(restable)
    
 }
 

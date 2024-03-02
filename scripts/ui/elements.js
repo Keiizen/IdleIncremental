@@ -1,30 +1,5 @@
 function setupHTML() {
-	let tabs = new Element("tabs")
-	let stabs = new Element("stabs")
-	let table = ""
-	let table2 = ""
-	for (let x = 0; x < TABS[1].length; x++) {
-		table += `<div>
-			<button onclick="TABS.choose(${x})" class="btn_tab" id="tab${x}">${TABS[1][x].icon ? `<iconify-icon icon="${TABS[1][x].icon}" width="72" style="color: ${TABS[1][x].color||"white"}"></iconify-icon>` : ""}<div>${TABS[1][x].id}</div></button>
-		</div>`
-		if (TABS[2][x]) {
-			let a = `<div id="stabs${x}" class="table_center stab_btn">`
-			for (let y = 0; y < TABS[2][x].length; y++) {
-				a += `<div style="width: 160px">
-					<button onclick="TABS.choose(${y}, true)" class="btn_tab" id="stab${x}_${y}">${TABS[2][x][y].id}</button>
-				</div>`
-			}
-			a += `</div>`
-			table2 += a
-		}
-	}
-	tabs.setHTML(table)
-	stabs.setHTML(table2)
-
 	
-
-	
-
 	
 	setupResourcesHTML()
 	
