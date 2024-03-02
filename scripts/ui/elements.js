@@ -7,21 +7,20 @@ function setupHTML() {
 
 	
 
-	
-
-    tmp.el = {}
+	tmp.el = {}
 	let all = document.getElementsByTagName("*")
 	for (let i=0;i<all.length;i++) {
 		let x = all[i]
 		tmp.el[x.id] = new Element(x)
 	}
+
+    
 }
 
- 
 
 
 
-function updsteHTML() {
+function updateHTML() {
 	//document.documentElement.style.setProperty('--font', player.options.font)
 	document.documentElement.style.setProperty('--cx', tmp.cx)
 	document.documentElement.style.setProperty('--cy', tmp.cy)
@@ -31,9 +30,9 @@ function updsteHTML() {
 	let displayMainTab = true
 	
 
-    tmp.el.game.setDisplay(tmp.start && displayMainTab)
+    document.getElementById("game").style = "block" ? (tmp.start && displayMainTab) : "none"
 	
 
-	if (!player.options.nav_hide[1]) updateResourcesHTML()
+	updateResourcesHTML()
 	if (hover_tooltip) updateTooltipResHTML()
 }
