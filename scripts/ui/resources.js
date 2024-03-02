@@ -1,11 +1,11 @@
 const RESOURCES_DIS = {
     points: {
-        unl: ()=>true,
+        unl: () => true,
 
         desc: (gs)=>format(player.points,0)+"<br>"+formatGain(player.points, tmp.pointGain.mul(gs)),
     },
     rp: {
-        unl: () {return player.points.gte(1e12)},
+        unl: () => player.points.gte(1e12),
         icon: "rp",
         class: "red",
 
@@ -36,10 +36,8 @@ function setupResourcesHTML() {
 
        
     }
-    let rt = document.createElement("div")
-    rt.innerHTML = h1
-    document.getElementById("game").appendChild(rt)
-   
+    
+    new Element("resources_table").setHTML(h1)
 }
 
 function updateResourcesHTML() {
