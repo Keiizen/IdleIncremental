@@ -40,7 +40,7 @@ function setupResourcesHTML() {
 
     new Element("resources_table").setHTML(h1)
     let restable = document.getElementById("resources_table")
-    document.getElementById("game").appendChild(restable)
+    document.getElementById("app").appendChild(restable)
    
 }
 
